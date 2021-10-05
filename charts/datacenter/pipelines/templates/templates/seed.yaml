@@ -2,6 +2,7 @@ apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
   name: seed
+  namespace: manuela-ci
 objects:
 - apiVersion: tekton.dev/v1beta1
   kind: PipelineRun
