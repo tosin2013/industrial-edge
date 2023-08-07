@@ -5,13 +5,13 @@ global:
   pattern: industrial-edge
 
   options:
-    useCSV: False
-    syncPolicy: Automatic
-    installPlanApproval: Automatic
+    useCSV: true
+    syncPolicy: Semi-Manual
+    installPlanApproval: Semi-Manual
 
   imageregistry:
     account: PLAINTEXT
-    hostname: quay.io
+    hostname: quay-registry-quay-quay-registry.apps.rccl.sandbox2487.opentlc.com
     type: quay
 
   git:
@@ -23,8 +23,8 @@ global:
 
   s3:
     bucket:
-      name: BUCKETNAME
-      region: AWSREGION
+      name: industrial-edgep-cltq4
+      region: AWSREus-east-2
       message:
         aggregation:
           count: 50
