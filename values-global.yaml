@@ -23,8 +23,8 @@ global:
 
   s3:
     bucket:
-      name: industrial-edgep-cltq4
-      region: AWSREus-east-2
+      name: industrial-edge-cltq4
+      region: us-east-2
       message:
         aggregation:
           count: 50
