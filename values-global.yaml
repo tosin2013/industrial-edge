@@ -10,13 +10,13 @@ global:
     installPlanApproval: Semi-Manual
 
   imageregistry:
-    account: PLAINTEXT
+    account: admin
     hostname: quay-registry-quay-quay-registry.apps.rccl.sandbox2487.opentlc.com
     type: quay
 
   git:
     hostname: github.com
-    account: PLAINTEXT
+    account: tosin2013
     #username: PLAINTEXT
     email: SOMEWHERE@EXAMPLE.COM
     dev_revision: main
