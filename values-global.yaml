@@ -17,7 +17,7 @@ global:
   git:
     hostname: github.com
     account: tosin2013
-    #username: PLAINTEXT
+    username: takinosh
     email: SOMEWHERE@EXAMPLE.COM
     dev_revision: main
 
