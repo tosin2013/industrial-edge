@@ -18,7 +18,7 @@ export VERSION=latest-4.12
 
 4. Deploy OpenShift
 ```
-curl -OL https://raw.githubusercontent.com/tosin2013/openshift-4-deployment-notes/master/pre-steps/deploy-openshift.sh
+curl -OL https://raw.githubusercontent.com/tosin2013/industrial-edge/main/scripts/deploy-openshift.sh
 chmod +x deploy-openshift.sh
 ./deploy-openshift.sh
 ```
