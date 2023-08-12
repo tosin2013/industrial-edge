@@ -9,6 +9,16 @@ while [[ $(oc get pods "$pod_name" -n "$namespace" -o 'jsonpath={..status.condit
   done
 }
 
+function dependency_check() {
+    if ! yq -v  &> /dev/null
+    then
+        VERSION=v4.30.6
+        BINARY=yq_linux_amd64
+        sudo wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O /usr/bin/yq &&\
+        sudo chmod +x /usr/bin/yq
+    fi
+}
+
 
 if [ -z "$1" ]; then
   echo "Error: openshift token is not passed."
@@ -24,6 +34,7 @@ token=$1
 url=$2
 
 sudo yum install wget git python3-pip podman make -y
+dependency_check
 sudo pip3 install click 
 #curl -OL https://raw.githubusercontent.com/tosin2013/openshift-4-deployment-notes/master/pre-steps/configure-openshift-packages.sh
 #chmod +x configure-openshift-packages.sh

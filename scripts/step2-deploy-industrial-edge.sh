@@ -39,14 +39,17 @@ sed -i "s/industrial-edge/$YOUR_GLOBAL_PATTERN/" values-global.yaml
 sed -i "s/False/true/" values-global.yaml
 sed -i "s/Automatic/Semi-Automatic/" values-global.yaml
 sed -i "s/Automatic/Manual/" values-global.yaml
-sed -i "s/plain_text/$YOUR_IMAGEREGISTRY_ACCOUNT/" values-global.yaml
 sed -i "s/quay.io/$YOUR_IMAGEREGISTRY_HOSTNAME/" values-global.yaml
 sed -i "s/quay/$YOUR_IMAGEREGISTRY_TYPE/" values-global.yaml
 sed -i "s/github.com/$YOUR_GIT_HOSTNAME/" values-global.yaml
-sed -i "s/plain_text/$YOUR_GIT_ACCOUNT/" values-global.yaml
 sed -i "s/main/$YOUR_DEV_REVISION/" values-global.yaml
 sed -i "s/BUCKETNAME/$YOUR_S3_BUCKET_NAME/" values-global.yaml
 sed -i "s/AWSREGION/$YOUR_S3_BUCKET_REGION/" values-global.yaml
+
+yq e -i '.global.imageregistry.account = "'$YOUR_IMAGEREGISTRY_ACCOUNT'"' values-global.yaml
+yq e -i '.global.git.account = "'$YOUR_GIT_ACCOUNT'"' values-global.yaml
+
+
 
 git pull origin deploy-${YOUR_VERSION}
 git add values-global.yaml
@@ -55,5 +58,4 @@ git push origin deploy-${YOUR_VERSION}
 
 
 # Deploy the pattern
-
 ./pattern.sh make install
