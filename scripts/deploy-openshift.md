@@ -18,6 +18,7 @@ export VERSION=latest-4.12
 
 4. Deploy OpenShift
 ```
+sudo yum install vim git -y
 curl -OL https://raw.githubusercontent.com/tosin2013/industrial-edge/main/scripts/deploy-openshift.sh
 chmod +x deploy-openshift.sh
 ./deploy-openshift.sh
