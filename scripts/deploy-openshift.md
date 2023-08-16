@@ -5,7 +5,7 @@
 ```
 curl -OL https://raw.githubusercontent.com/tosin2013/openshift-4-deployment-notes/master/aws/configure-aws-cli.sh
 chmod +x configure-aws-cli.sh 
-./configure-aws-cli.sh -i aws_access_key_id aws_secret_access_key aws_region
+./configure-aws-cli.sh
 ```
 
 3. Configure OpenShift Packages 
