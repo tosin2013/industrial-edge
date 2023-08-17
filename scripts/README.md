@@ -90,7 +90,12 @@ Your version [v2.3]:
 $ cat .env
 ```
 
-7. Deploy the industrial edge demo
+7. Create aws bucket
+```
+aws s3 mb s3://industrial-edge-$GUID
+```
+
+8. Deploy the industrial edge demo
 ```
 $ curl -OL https://raw.githubusercontent.com/tosin2013/industrial-edge/main/scripts/step2-deploy-industrial-edge.sh
 $ chmod +x step2-deploy-industrial-edge.sh
